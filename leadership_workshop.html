@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path to Leadership Game</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Path to Leadership Game</h1>
+    
+    <div id="scenario1" class="scenario">
+        <h2>Scenario 1: Communication Challenge</h2>
+        <p>You're leading a team project, and there's a misunderstanding among team members. How do you address it?</p>
+        <button onclick="handleDecision('communicate1')">Communicate openly</button>
+        <button onclick="handleDecision('avoid1')">Avoid confrontation</button>
+    </div>
+
+    <div id="scenario2" class="scenario">
+        <h2>Scenario 2: Decision-Making Dilemma</h2>
+        <p>You have to make a critical decision that affects the future of the project. How do you approach it?</p>
+        <button onclick="handleDecision('analyze2')">Analyze all options carefully</button>
+        <button onclick="handleDecision('rush2')">Make a quick decision to move forward</button>
+    </div>
+
+    <div id="scenario3" class="scenario">
+        <h2>Scenario 3: Team Conflict Resolution</h2>
+        <p>Two team members are in conflict, affecting team morale. How do you resolve the issue?</p>
+        <button onclick="handleDecision('mediate3')">Mediate a discussion between them</button>
+        <button onclick="handleDecision('ignore3')">Ignore the conflict and hope it resolves itself</button>
+    </div>
+
+    <div id="scenario4" class="scenario">
+        <h2>Scenario 4: Leadership Opportunity</h2>
+        <p>Your boss offers you a leadership position on a new project. How do you respond?</p>
+        <button onclick="handleDecision('accept4')">Accept the opportunity</button>
+        <button onclick="handleDecision('decline4')">Decline the opportunity</button>
+    </div>
+
+    <div id="scenario5" class="scenario">
+        <h2>Scenario 5: Presentation Preparation</h2>
+        <p>You have to give a presentation to the senior management team. How do you prepare?</p>
+        <button onclick="handleDecision('prepare5')">Spend extra time preparing and rehearsing</button>
+        <button onclick="handleDecision('wing5')">Wing it and rely on your natural charisma</button>
+    </div>
+
+    <!-- Add more scenarios here -->
+
+    <div id="outcome">
+        <!-- Outcome of the decision will be displayed here -->
+    </div>
+
+    <div id="score">
+        <h2>Score:</h2>
+        <p>Total points: <span id="totalPoints">0</span></p>
+    </div>
+
+    <script>
+        let totalPoints = 0;
+
+        function handleDecision(decision) {
+            let points = 0;
+            // Logic to assign points based on decision for each scenario
+            switch (decision) {
+                case 'communicate1':
+                    points = 10;
+                    break;
+                case 'avoid1':
+                    points = -5;
+                    break;
+                case 'analyze2':
+                    points = 15;
+                    break;
+                case 'rush2':
+                    points = -10;
+                    break;
+                case 'mediate3':
+                    points = 10;
+                    break;
+                case 'ignore3':
+                    points = -5;
+                    break;
+                case 'accept4':
+                    points = 20;
+                    break;
+                case 'decline4':
+                    points = -10;
+                    break;
+                case 'prepare5':
+                    points = 10;
+                    break;
+                case 'wing5':
+                    points = -5;
+                    break;
+                // Add more cases for each scenario
+            }
+
+            totalPoints += points;
+
+            // Display outcome based on the decision
+            document.getElementById('outcome').innerHTML = `
+                <h3>Outcome:</h3>
+                <p>You chose to ${decision}. This resulted in ${points} points.</p>
+            `;
+
+            // Update total points
+            document.getElementById('totalPoints').textContent = totalPoints;
+        }
+    </script>
+</body>
+</html>
